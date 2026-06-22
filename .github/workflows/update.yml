@@ -15,8 +15,6 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v4
-        with:
-          persist-credentials: true
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -30,12 +28,12 @@ jobs:
         run: |
           git config --global user.name "auto-bot"
           git config --global user.email "bot@github.com"
-
           git add bursaries.json
+          git diff --cached --quiet || git commit -m "auto update"
+          git push
 
-          if git diff --cached --quiet; then
-            echo "No changes to commit"
-          else
-            git commit -m "auto update"
-            git push
-          fi
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
