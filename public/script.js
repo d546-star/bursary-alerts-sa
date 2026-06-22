@@ -1,42 +1,32 @@
 let allData = [];
 
-async function loadBursaries() {
+async function load() {
   const res = await fetch('bursaries.json');
   allData = await res.json();
   render(allData);
 }
 
 function render(data) {
-  const container = document.getElementById("list");
-  container.innerHTML = "";
+  const list = document.getElementById("list");
+  list.innerHTML = "";
 
-  const fragment = document.createDocumentFragment();
-
-  data.forEach(item => {
-    const div = document.createElement("div");
-    div.className = "card";
-
-    div.innerHTML = `
+  const html = data.map(item => `
+    <div class="card">
       <h3>${item.title}</h3>
       <p>${item.description}</p>
-      <a href="${item.link}" target="_blank" rel="noopener">Apply</a>
-    `;
+      <a href="${item.link}" target="_blank">Apply</a>
+    </div>
+  `).join("");
 
-    fragment.appendChild(div);
-  });
-
-  container.appendChild(fragment);
+  list.innerHTML = html;
 }
 
 function filterBursaries() {
   const q = document.getElementById("search").value.toLowerCase();
-
-  const filtered = allData.filter(b =>
+  render(allData.filter(b =>
     b.title.toLowerCase().includes(q) ||
     b.description.toLowerCase().includes(q)
-  );
-
-  render(filtered);
+  ));
 }
 
-loadBursaries();
+load();
