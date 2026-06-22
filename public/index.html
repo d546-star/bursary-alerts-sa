@@ -41,19 +41,30 @@
 </section>
 <nav>
   <a href="/">Home</a>
+  <a href="nsfas.html">NSFAS</a> |
+  <a href="engineering.html">Engineering</a> |
+  <a href="teaching.html">Teaching</a> |
+  <a href="medical.html">Medical</a>
 </nav>
 <footer>
   <p>
     More bursaries coming daily. Bookmark this page for updates.
   </p>
+<p>Last updated: <span id="date"></span></p>
 
+<script>
+document.getElementById("date").innerText = new Date().toDateString();
+</script>
   <p>
     Related searches:
     NSFAS bursaries | Engineering bursaries South Africa | Student funding 2026
   </p>
 </footer>
 <input type="text" id="search" placeholder="Search bursaries (NSFAS, engineering, teaching...)" onkeyup="filterBursaries()">
-
+<h2>Bursaries in South Africa 2026</h2>
+<p>
+We list updated bursaries including NSFAS, engineering, teaching, and medical funding in South Africa.
+</p>
 <div id="list"></div>
 
 <script src="script.js"></script>
