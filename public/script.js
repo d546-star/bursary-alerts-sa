@@ -1,15 +1,16 @@
 let allData = [];
 
-fetch('bursaries.json')
-  .then(res => res.json())
-  .then(data => {
-    allData = data;
-    render(data);
-  });
+async function loadBursaries() {
+  const res = await fetch('bursaries.json');
+  allData = await res.json();
+  render(allData);
+}
 
 function render(data) {
   const container = document.getElementById("list");
   container.innerHTML = "";
+
+  const fragment = document.createDocumentFragment();
 
   data.forEach(item => {
     const div = document.createElement("div");
@@ -18,11 +19,13 @@ function render(data) {
     div.innerHTML = `
       <h3>${item.title}</h3>
       <p>${item.description}</p>
-      <a href="${item.link}" target="_blank">Apply Here</a>
+      <a href="${item.link}" target="_blank" rel="noopener">Apply</a>
     `;
 
-    container.appendChild(div);
+    fragment.appendChild(div);
   });
+
+  container.appendChild(fragment);
 }
 
 function filterBursaries() {
@@ -35,3 +38,5 @@ function filterBursaries() {
 
   render(filtered);
 }
+
+loadBursaries();
