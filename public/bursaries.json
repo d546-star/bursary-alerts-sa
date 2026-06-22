@@ -1,12 +1,9 @@
 [
   {
-    "title": "NSFAS Funding",
-    "description": "Government student funding",
-    "link": "https://www.nsfas.org.za"
-  },
-  {
-    "title": "Capitec Bursary",
-    "description": "Bank bursary programme",
-    "link": "https://www.capitecbank.co.za"
+    "slug": "nsfas-2026-funding",
+    "title": "NSFAS Funding 2026",
+    "description": "Government funding for South African students.",
+    "category": "nsfas",
+    "link": "https://example.com/apply"
   }
 ]
