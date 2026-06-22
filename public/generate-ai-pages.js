@@ -37,6 +37,16 @@ Visit the official application portal and submit required documents before the d
 
 <a href="${item.title}" target="_blank">Apply Here</a>
 
+<h2>Recommended Study Resources</h2>
+
+<p>
+Improve your chances of getting funded by improving your marks:
+</p>
+
+<a href="YOUR_AFFILIATE_LINK_HERE" target="_blank">
+👉 Free Online Courses
+</a>
+
 <br><br>
 <a href="../index.html">← Back to home</a>
 
