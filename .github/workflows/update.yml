@@ -24,6 +24,11 @@ jobs:
       - name: Run update script
         run: npm install && npm run update
 
+      - name: Copy bursaries into site
+        run: |
+          mkdir -p public
+          cp bursaries.json public/bursaries.json
+
       - name: Commit changes
         run: |
           git config --global user.name "auto-bot"
@@ -36,4 +41,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .
+          publish_dir: ./public
