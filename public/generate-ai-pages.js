@@ -23,6 +23,20 @@ The ${item.title} program provides funding opportunities for South African stude
 This bursary helps students access higher education without financial barriers.
 </p>
 
+<h2>Why This Bursary Matters</h2>
+
+<p>
+This bursary helps students reduce financial pressure and access higher education opportunities in South Africa.
+</p>
+
+<h2>Tips to Improve Your Chances</h2>
+
+<ul>
+  <li>Maintain strong academic results</li>
+  <li>Apply early before deadlines</li>
+  <li>Prepare all documents properly</li>
+</ul>
+
 <h2>Eligibility</h2>
 <ul>
   <li>South African citizen</li>
