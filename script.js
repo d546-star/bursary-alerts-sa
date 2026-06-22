@@ -1,16 +1,18 @@
 fetch('bursaries.json')
   .then(res => res.json())
   .then(data => {
-    const list = document.getElementById('list');
+    const container = document.getElementById("list");
 
-    data.forEach(b => {
-      const div = document.createElement('div');
-      div.className = 'card';
+    data.forEach(item => {
+      const div = document.createElement("div");
+      div.className = "card";
+
       div.innerHTML = `
-        <h3>${b.title}</h3>
-        <p>${b.description}</p>
-        <a href="${b.link}" target="_blank">Apply</a>
+        <h3>${item.title}</h3>
+        <p>${item.description}</p>
+        <a href="${item.link}" target="_blank">Apply Here</a>
       `;
-      list.appendChild(div);
+
+      container.appendChild(div);
     });
   });
