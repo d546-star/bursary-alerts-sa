@@ -1,0 +1,30 @@
+name: Daily Bursary Update
+
+on:
+  schedule:
+    - cron: "0 6 * * *"   # runs every day at 06:00
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Run update script
+        run: npm install && npm run update
+
+      - name: Save changes
+        run: |
+          git config --global user.name "auto-bot"
+          git config --global user.email "bot@github.com"
+          git add bursaries.json
+          git commit -m "auto update" || echo "no changes"
+          git push
