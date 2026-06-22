@@ -1,9 +1,12 @@
 [
   {
-    "slug": "nsfas-2026-funding",
-    "title": "NSFAS Funding 2026",
-    "description": "Government student funding for South African students.",
-    "category": "nsfas",
-    "keywords": "nsfas, student funding, south africa bursaries, university funding"
+    "title": "NSFAS Funding",
+    "description": "Government student funding",
+    "link": "https://www.nsfas.org.za"
+  },
+  {
+    "title": "Capitec Bursary",
+    "description": "Bank bursary programme",
+    "link": "https://www.capitecbank.co.za"
   }
 ]
