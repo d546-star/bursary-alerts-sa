@@ -1,0 +1,55 @@
+const fs = require("fs");
+
+const data = JSON.parse(fs.readFileSync("bursaries.json", "utf8"));
+
+function aiWrite(item) {
+  // simulated "AI SEO writing engine"
+  return `
+<!DOCTYPE html>
+<html>
+<head>
+  <title>${item.title} | Bursaries South Africa 2026</title>
+  <meta name="description" content="${item.description}">
+  <meta name="keywords" content="${item.keywords}">
+</head>
+
+<body>
+
+<h1>${item.title}</h1>
+
+<h2>Overview</h2>
+<p>
+The ${item.title} program provides funding opportunities for South African students.
+This bursary helps students access higher education without financial barriers.
+</p>
+
+<h2>Eligibility</h2>
+<ul>
+  <li>South African citizen</li>
+  <li>Must meet academic requirements</li>
+  <li>Financial need may apply</li>
+</ul>
+
+<h2>How to Apply</h2>
+<p>
+Visit the official application portal and submit required documents before the deadline.
+</p>
+
+<a href="${item.title}" target="_blank">Apply Here</a>
+
+<br><br>
+<a href="../index.html">← Back to home</a>
+
+</body>
+</html>
+`;
+}
+
+if (!fs.existsSync("public/bursary")) {
+  fs.mkdirSync("public/bursary", { recursive: true });
+}
+
+data.forEach(item => {
+  const page = aiWrite(item);
+  fs.writeFileSync(`public/bursary/${item.slug}.html`, page);
+});
