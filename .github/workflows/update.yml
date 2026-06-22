@@ -46,6 +46,22 @@ jobs:
         run: node generate-ai-pages.js
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      
+      - name: Ensure folders exist
+        run: |
+          mkdir -p public
+          mkdir -p public/bursary
+          
+          - name: Commit changes
+          run: |
+          git config user.name "auto-bot"
+          git config user.email "bot@github.com"
+
+          git add .
+
+          git diff --cached --quiet || git commit -m "auto update"
+
+          git push || echo "Push failed but continuing"
 
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
