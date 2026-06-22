@@ -35,6 +35,7 @@ jobs:
         run: |
           mkdir -p public
           cp bursaries.json public/bursaries.json
+          
       - name: Commit changes
         run: |
           git config --global user.name "auto-bot"
@@ -52,8 +53,8 @@ jobs:
           mkdir -p public
           mkdir -p public/bursary
           
-          - name: Commit changes
-          run: |
+      - name: Commit changes
+        run: |
           git config user.name "auto-bot"
           git config user.email "bot@github.com"
 
