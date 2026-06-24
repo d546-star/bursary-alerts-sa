@@ -26,8 +26,6 @@ jobs:
       - name: Run update script
         run: npm install && npm run update
 
-      - run: npm install && npm run update
-
       - name: Generate SEO Pages
         run: node generate-pages.js
 
