@@ -1,8 +1,12 @@
 [
   {
-    "title":"NSFAS Funding",
-    "slug":"nsfas-2026-funding",
-    "description":"Government student funding",
-    "link":"https://www.nsfas.org.za"
+    "title": "NSFAS Funding",
+    "description": "Government student funding",
+    "link": "https://www.nsfas.org.za"
+  },
+  {
+    "title": "Capitec Bursary",
+    "description": "Bank bursary programme",
+    "link": "https://www.capitecbank.co.za"
   }
 ]
